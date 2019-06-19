@@ -15,9 +15,6 @@ python collect_simple.py --num_episodes 10 --render test_10.npz
 I collected dataset of 600 episodes for training and 100 episodes for validation. The dataset can be downloaded from [here](https://github.com/tambetm/pommerman-baselines/releases/tag/simple_600K).
 
 ## Model training
-
-* `Linear model.ipynb` - linear model. Performs extremely poorly.
-* `Fully connected model.ipynb` - fully connected model with two hidden layers with 128 units + additional hidden layer with 128 units for value head. Performs very poorly.
 * `Conv model.ipynb` - simple convolutional network with three 3x3 convolutions with 32 filters + fully connected layer with 128 nodes + another fully connected layer with 128 units for value head. Performs poorly.
 * `AlphaGoZero model.ipynb` - model inspired by [AlphaGoZero paper](https://deepmind.com/documents/119/agz_unformatted_nature.pdf). Performs well, but tends to overfit.
 * `Conv256 model.ipynb` - three 3x3 convolutions with 256 filters, no fully connected layers. Achieves better validation set performance as AlphaGoZero, but overfits less.
@@ -44,18 +41,14 @@ Self-plays tend to get stuck with agents moving back and forth or not moving at 
 
 | Model | Avg. reward | Avg. length |  Val. acc. | Val. exp. var. | Train acc. | Train exp. var. |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| ***Baselines*** |
+
 | SimpleAgent | -0.61 | 258 | | | | |
 | StopAgent | -0.85 | 291 | | | |
-| ***Imitation*** |
-| [Linear](https://github.com/tambetm/pommerman-baselines/releases/download/simple_600K_models/linear.h5) | -0.905 | 110 | 0.363 | -0.006 | 0.393 | 0.013 |
-| [Fully connected](https://github.com/tambetm/pommerman-baselines/releases/download/simple_600K_models/dense.h5) | -0.94 | 157 | 0.392 | | 0.400 | |
-| [Conv](https://github.com/tambetm/pommerman-baselines/releases/download/simple_600K_models/conv.h5) | -0.755 | 262 | 0.630 | -0.391 | 0.661 | 0.883 |
-| [AlphaGoZero](https://github.com/tambetm/pommerman-baselines/releases/download/simple_600K_models/AGZ.h5) | -0.635 | 278 | 0.668 | -0.278 | 0.761 | 0.930 |
-| [Conv256](https://github.com/tambetm/pommerman-baselines/releases/download/simple_600K_models/conv256.h5) | -0.63 | 299 | 0.676 | | 0.705 | |
+| 
+
 
 The columns of the table:
-* **Model** - click on model name to download weights.
+* **Model** 
 * **Avg. reward** - average reward when running against three SimpleAgents.
 * **Avg. length** - average episode length when running against three SimpleAgents.
 * **Val. acc.** - validation set accuracy of action prediction.
